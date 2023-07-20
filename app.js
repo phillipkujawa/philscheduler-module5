@@ -12,30 +12,15 @@ window.onload = function() {
     localStorage.setItem(time, userDesc);
     
     });
-    // Create time blocks
-    // for (let hour = 9; hour <= 23; hour++) {
-    //     const timeBlockElement = document.createElement('div');
-    //     timeBlockElement.id = `hour-${hour}`;
-    //     timeBlockElement.innerText = `${hour}:00`;
 
-    //     // Color code the time block
-    //     const currentHour = currentDate.hour();
-    //     if (hour < currentHour) {
-    //         timeBlockElement.className = 'past';
-    //     } else if (hour === currentHour) {
-    //         timeBlockElement.className = 'present';
-    //     } else {
-    //         timeBlockElement.className = 'future';
-    //     }
-
-    //     timeBlockElement.onclick = function() {
-    //         const event = prompt('Enter an event:');
-    //         if (event) {
-    //             localStorage.setItem(`event-${hour}`, event);
-    //             timeBlockElement.innerText = `${hour}:00 - ${event}`;
-    //         }
-    //     }
-
+    $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+    $('#hour-10 .description').val(localStorage.getItem('hour-10'));
+    $('#hour-11 .description').val(localStorage.getItem('hour-11'));
+    $('#hour-12 .description').val(localStorage.getItem('hour-12'));
+    $('#hour-13 .description').val(localStorage.getItem('hour-13'));
+    $('#hour-14 .description').val(localStorage.getItem('hour-14'));
+    $('#hour-15 .description').val(localStorage.getItem('hour-15'));
+    
         // Load saved event
         const savedEvent = localStorage.getItem(`event-${hour}`);
         if (savedEvent) {
