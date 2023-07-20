@@ -21,12 +21,12 @@ window.onload = function() {
     $('#hour-14 .description').val(localStorage.getItem('hour-14'));
     $('#hour-15 .description').val(localStorage.getItem('hour-15'));
     
-        // Load saved event
-        const savedEvent = localStorage.getItem(`event-${hour}`);
-        if (savedEvent) {
-            timeBlockElement.innerText = `${hour}:00 - ${savedEvent}`;
-        }
-
-        timeBlocksElement.appendChild(timeBlockElement);
+    function schedulePainter() {
+        // get current hour(time) using dayjs
+        var hourNow = dayjs().hour();
+        console.log("hourNow = ", hourNow);
+    }
+    schedulePainter();
+    
     }
 
