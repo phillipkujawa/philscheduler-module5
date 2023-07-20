@@ -25,8 +25,25 @@ window.onload = function() {
         // get current hour(time) using dayjs
         var hourNow = dayjs().hour();
         console.log("hourNow = ", hourNow);
+        // loop over time blocks
+        $('.time-block').each(function () {
+            // get hour from time block
+            var hourBlock = parseInt($(this).attr('id').split('-')[1]);
+            console.log("hourBlock = ", hourBlock);
+            // check if we've moved past this time
+            if (hourBlock < hourNow) {
+                $(this).addClass('past');
+            } else if (hourBlock === hourNow) {
+                $(this).removeClass('past');
+                $(this).addClass('present');
+            } else {
+                $(this).removeClass('past');
+                $(this).removeClass('present');
+                $(this).addClass('future');
+            }
+        });
     }
     schedulePainter();
-    
+
     }
 
